@@ -28,6 +28,7 @@
     "@storybook/addons": "4.1.0-alpha.9",
     "@storybook/components": "4.1.0-alpha.9",
     "estraverse": "^4.2.0",
+    "global": "^4.3.2",
     "loader-utils": "^1.1.0",
     "prettier": "^1.14.3",
     "prop-types": "^15.6.2",

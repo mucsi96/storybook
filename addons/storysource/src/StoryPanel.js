@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { RoutedLink, SyntaxHighlighter } from '@storybook/components';
+import { RoutedLink, Editor } from '@storybook/components';
 
 import { createElement } from 'react-syntax-highlighter';
 import { EVENT_ID } from './events';
@@ -170,17 +170,19 @@ export default class StoryPanel extends Component {
     const { active } = this.props;
     const { source } = this.state;
 
-    return active ? (
-      <SyntaxHighlighter
-        language="jsx"
-        showLineNumbers="true"
-        renderer={this.lineRenderer}
-        copyable={false}
-        padded
-      >
-        {source}
-      </SyntaxHighlighter>
-    ) : null;
+    return active ? <Editor /> : null;
+
+    // return active ? (
+    //   <SyntaxHighlighter
+    //     language="jsx"
+    //     showLineNumbers="true"
+    //     renderer={this.lineRenderer}
+    //     copyable={false}
+    //     padded
+    //   >
+    //     {source}
+    //   </SyntaxHighlighter>
+    // ) : null;
   }
 }
 
