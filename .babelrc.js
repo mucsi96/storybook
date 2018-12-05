@@ -5,9 +5,9 @@ module.exports = {
     '@babel/preset-react',
   ],
   plugins: [
-    '@babel/plugin-proposal-class-properties',
+    ['@babel/plugin-proposal-object-rest-spread', { loose: true, useBuiltIns: true }],
     '@babel/plugin-proposal-export-default-from',
-    '@babel/plugin-proposal-object-rest-spread',
+    ['@babel/plugin-proposal-class-properties', { loose: true }],
     '@babel/plugin-syntax-dynamic-import',
     [
       '@babel/plugin-transform-runtime',
@@ -15,9 +15,9 @@ module.exports = {
         regenerator: true,
       },
     ],
+    ['emotion', { sourceMap: true, autoLabel: true }],
     'babel-plugin-add-react-displayname',
     'babel-plugin-macros',
-    ['emotion', { sourceMap: true, autoLabel: true }],
   ],
   env: {
     test: {
