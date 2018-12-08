@@ -1,10 +1,10 @@
 import React from 'react';
 import ThemeProvider from '@emotion/provider';
 import styled from '@emotion/styled';
-import { configure, addDecorator } from '@storybook/react';
+import { configure, addDecorator, addParameters } from '@storybook/react';
 import { themes } from '@storybook/components';
 import { withOptions } from '@storybook/addon-options';
-import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { cssResources } from '@storybook/addon-cssresources';
 
 import 'react-chromatic/storybook-addon';
@@ -47,16 +47,11 @@ const Reset = styled.div(({ theme }) => ({
 
 addDecorator((story, { kind }) => (kind === 'Core|Errors' ? story() : <Reset>{story()}</Reset>));
 
-addDecorator(
-  (story, { kind }) =>
-    kind === 'Core|Errors' ? (
-      story()
-    ) : (
-      <ThemeProvider theme={themes.normal}>{story()}</ThemeProvider>
-    )
+addDecorator((story, { kind }) =>
+  kind === 'Core|Errors' ? story() : <ThemeProvider theme={themes.normal}>{story()}</ThemeProvider>
 );
 
-configureViewport({
+addParameters({
   viewports: {
     ...INITIAL_VIEWPORTS,
     ...extraViewports,
