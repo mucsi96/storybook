@@ -27,8 +27,8 @@ module.exports = {
     {
       test: [
         './lib/core/src/server',
-	'./lib/node-logger',
-	'./lib/codemod',
+        './lib/node-logger',
+        './lib/codemod',
         './addons/storyshots',
         './addons/storysource/src/loader',
         './app/**/src/server/**',
