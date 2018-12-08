@@ -3,7 +3,6 @@ module.exports = {
     ['@babel/preset-env', { shippedProposals: true, useBuiltIns: 'usage', modules: false }],
     '@babel/preset-react',
     '@babel/preset-flow',
-    '@babel/preset-react',
   ],
   plugins: [
     ['@babel/plugin-proposal-object-rest-spread', { loose: true, useBuiltIns: true }],
@@ -27,6 +26,9 @@ module.exports = {
     },
     {
       test: [
+        './lib/core/src/server',
+	'./lib/node-logger',
+	'./lib/codemod',
         './addons/storyshots',
         './addons/storysource/src/loader',
         './app/**/src/server/**',
