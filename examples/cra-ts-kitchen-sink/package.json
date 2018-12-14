@@ -1,0 +1,29 @@
+{
+  "name": "cra-ts-kitchen-sink",
+  "version": "4.2.0-alpha.1",
+  "private": true,
+  "scripts": {
+    "build:storybook": "build-storybook -s public",
+    "start": "start-storybook -p 9010 -s public",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "dependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "4.2.0-alpha.1",
+    "@storybook/addon-info": "4.2.0-alpha.1",
+    "@storybook/addon-options": "4.2.0-alpha.1",
+    "@storybook/addons": "4.2.0-alpha.1",
+    "@storybook/react": "4.2.0-alpha.1",
+    "@types/react": "^16.7.17",
+    "@types/react-dom": "^16.0.11",
+    "@types/storybook__addon-actions": "^3.4.1",
+    "@types/storybook__addon-info": "^3.4.2",
+    "@types/storybook__react": "^4.0.0",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-scripts": "^2.1.0",
+    "typescript": "^3.2.2"
+  }
+}
