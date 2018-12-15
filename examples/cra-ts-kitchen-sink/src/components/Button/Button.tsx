@@ -1,10 +1,15 @@
 import * as React from 'react';
 
 interface Props {
-    /**
-     * sdsadadsa
-     */
-    onClick: () => voide;
+  /**
+   * Click event handler
+   * @default null
+   */
+  onClick?: () => void;
 }
 
-export const Button = (props: Props) => <button type="button" {...props}>Hello</button>
+export const Button: React.SFC<Props> = ({ children, onClick }) => (
+  <button type="button" onClick={onClick}>
+    {children}
+  </button>
+);

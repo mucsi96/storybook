@@ -1,10 +1,17 @@
-const util = require('util');
+const path = require('path');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-const TSDocgenPlugin = require('react-docgen-typescript-webpack-plugin');
-
-
-module.exports = (baseConfig, env, config) => {
-  console.log(util.inspect({ baseConfig, env, config }, false, 15, true));
-  config.plugins.push(new TSDocgenPlugin()); // optional
-  return config;
-};
+module.exports = (_baseCnig, _env, config) => ({
+  ...config,
+  module: {
+    rules: [
+      ...config.module.rules,
+      {
+        test: /\.tsx?$/,
+        include: path.resolve(__dirname, '../src'),
+        use: [require.resolve('react-docgen-typescript-loader')],
+      },
+    ],
+  },
+  plugins: [...config.plugins, new ForkTsCheckerWebpackPlugin()],
+});
